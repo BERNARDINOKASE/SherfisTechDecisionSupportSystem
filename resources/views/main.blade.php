@@ -53,5 +53,5 @@
     @if (route('login') || route('register') )
         @yield('auth')
     @endif
-    @yield('content')
+    @yield('main')
 </html>
