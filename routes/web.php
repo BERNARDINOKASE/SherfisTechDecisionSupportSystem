@@ -19,7 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('layouts.dashboard');
+    return view('content.dashboard');
 })->name('dashboard')->middleware('auth');
 
 Route::controller(AuthenticateController::class)->middleware('guest')->group(function () {
