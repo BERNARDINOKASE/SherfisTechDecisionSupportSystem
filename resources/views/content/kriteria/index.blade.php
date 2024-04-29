@@ -66,10 +66,11 @@
                                             <td>{{$item->nama_kriteria}}</td>
                                             <td>{{$item->bobot_kriteria}}</td>
                                             <td>
+                                                <a href="{{route('kriteria.edit', $item->id_kriteria)}}" class="btn btn-sm btn-warning m-1" title="Ubah"><i class="fas fa-pen"></i></a>
                                                 <form action="{{route('kriteria.delete', $item->id_kriteria)}}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                                    <button type="submit" class="btn btn-sm btn-danger m-1" title="Hapus"><i class="fas fa-trash"></i></button>
                                                 </form>
                                             </td>
                                         </tr>

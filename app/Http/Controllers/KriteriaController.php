@@ -37,8 +37,30 @@ class KriteriaController extends Controller
         Kriteria::create($data);
         return to_route('kriteria.index')->with('success', 'Kriteria ' . $request->nama_kriteria . ' berhasil ditambahkan.');
     }
-    public function edit(Request $request)
+
+    public function edit($id)
     {
+        $data = Kriteria::where('id_kriteria', $id)->first();
+        return view('content.kriteria.edit', compact('data'));
+    }
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'nama_kriteria' => ['required'],
+            'bobot_kriteria' => ['required', 'numeric']
+        ], [
+            'nama_kriteria.required' => 'Nama kriteria wajib diisi.',
+            'bobot_kriteria.required' => 'Bobot kriteria wajib diisi.',
+            'bobot_kriteria.numeric' => 'Nama kriteria bertipe numerik.'
+        ]);
+
+        $data = [
+            'nama_kriteria' => $request->nama_kriteria,
+            'bobot_kriteria' => $request->bobot_kriteria,
+        ];
+
+        Kriteria::where('id_kriteria', $id)->update($data);
+        return to_route('kriteria.index')->with('success', 'Kriteria ' . $request->nama_kriteria . ' berhasil diperbarui.');
     }
     public function destroy(string $id)
     {
