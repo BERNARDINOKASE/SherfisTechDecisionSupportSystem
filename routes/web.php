@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlternatifController;
 use App\Http\Controllers\Auth\AuthenticateController;
 use App\Http\Controllers\KriteriaController;
 use Illuminate\Support\Facades\Route;
@@ -34,6 +35,20 @@ Route::controller(KriteriaController::class)
     ->group(function () {
         Route::get('/', 'index')->name('kriteria.index');
         Route::get('/tambah', 'create')->name('kriteria.create');
-        Route::post('/store', 'store')->name('kriteria.store');
-        Route::delete('hapus/{id}', 'destroy')->name('kriteria.delete');
+        Route::get('/ubah={id}', 'edit')->name('kriteria.edit');
+        Route::patch('/ubah={id}', 'update')->name('kriteria.update');
+        Route::post('/tambah', 'store')->name('kriteria.store');
+        Route::delete('hapus={id}', 'destroy')->name('kriteria.delete');
+    });
+
+Route::controller(AlternatifController::class)
+    ->middleware('auth')
+    ->prefix('alternatif')
+    ->group(function () {
+        Route::get('/', 'index')->name('alternatif.index');
+        Route::get('/tambah', 'create')->name('alternatif.create');
+        Route::get('/ubah={id}', 'edit')->name('alternatif.edit');
+        Route::patch('/ubah={id}', 'update')->name('alternatif.update');
+        Route::post('/tambah', 'store')->name('alternatif.store');
+        Route::delete('hapus={id}', 'destroy')->name('alternatif.delete');
     });
