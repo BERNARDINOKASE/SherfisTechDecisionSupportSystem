@@ -40,7 +40,7 @@ class KriteriaController extends Controller
     public function edit(Request $request)
     {
     }
-    public function destroy(string $id)`
+    public function destroy(string $id)
     {
         Kriteria::where('id_kriteria', $id)->delete();
         return redirect()->back()->with('success', 'Kriteria berhasil dihapus.');
