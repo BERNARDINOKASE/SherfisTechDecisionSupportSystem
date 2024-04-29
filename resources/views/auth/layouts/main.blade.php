@@ -50,5 +50,5 @@
             href="{{asset('assets/')}}/plugins/summernote/summernote-bs4.min.css"
         />
     </head>
-    @yield('main')
+    @yield('auth')
 </html>
