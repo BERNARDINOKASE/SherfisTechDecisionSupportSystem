@@ -9,8 +9,16 @@ class KriteriaController extends Controller
 {
     public function index()
     {
-        $data = Kriteria::all();
-        return view('content.kriteria.index', compact('data'));
+        $data = Kriteria::orderBy('bobot_kriteria', 'ASC')->get();
+        $sum  = Kriteria::select('bobot_kriteria')->sum('bobot_kriteria');
+        $rgn = Kriteria::where('tingkat_kerusakan', 'RINGAN')->max('bobot_kriteria');
+        $sdg = Kriteria::where('tingkat_kerusakan', 'SEDANG')->max('bobot_kriteria');
+        $brt = Kriteria::where('tingkat_kerusakan', 'BERAT')->max('bobot_kriteria');
+        $ringan = $rgn / $sum;
+        $sedang = $sdg / $sum;
+        $berat = $brt / $sum;
+        // dd($ringan);
+        return view('content.kriteria.index', compact('data', 'sum', 'ringan', 'sedang', 'berat'));
     }
     public function create()
     {
@@ -21,16 +29,19 @@ class KriteriaController extends Controller
         // return 'tambah';
         $request->validate([
             'nama_kriteria' => ['required'],
-            'bobot_kriteria' => ['required', 'numeric']
+            'bobot_kriteria' => ['required', 'numeric'],
+            'tingkat_kerusakan' => ['required']
         ], [
             'nama_kriteria.required' => 'Nama kriteria wajib diisi.',
             'bobot_kriteria.required' => 'Bobot kriteria wajib diisi.',
-            'bobot_kriteria.numeric' => 'Nama kriteria bertipe numerik.'
+            'bobot_kriteria.numeric' => 'Nama kriteria bertipe numerik.',
+            'tingkat_kerusakan.required' => 'Tingkat kerusakan wajib diisi.',
         ]);
 
         $data = [
             'id_kriteria' => 'KRITERIA-' . time(),
             'nama_kriteria' => $request->nama_kriteria,
+            'tingkat_kerusakan' => $request->tingkat_kerusakan,
             'bobot_kriteria' => $request->bobot_kriteria,
         ];
 
@@ -47,15 +58,18 @@ class KriteriaController extends Controller
     {
         $request->validate([
             'nama_kriteria' => ['required'],
-            'bobot_kriteria' => ['required', 'numeric']
+            'bobot_kriteria' => ['required', 'numeric'],
+            'tingkat_kerusakan' => ['required']
         ], [
             'nama_kriteria.required' => 'Nama kriteria wajib diisi.',
             'bobot_kriteria.required' => 'Bobot kriteria wajib diisi.',
-            'bobot_kriteria.numeric' => 'Nama kriteria bertipe numerik.'
+            'bobot_kriteria.numeric' => 'Nama kriteria bertipe numerik.',
+            'tingkat_kerusakan.required' => 'Tingkat kerusakan wajib diisi.',
         ]);
 
         $data = [
             'nama_kriteria' => $request->nama_kriteria,
+            'tingkat_kerusakan' => $request->tingkat_kerusakan,
             'bobot_kriteria' => $request->bobot_kriteria,
         ];
 

@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('kriterias', function (Blueprint $table) {
             $table->string('id_kriteria')->primary();
             $table->string('nama_kriteria', 100);
+            $table->enum('tingkat_kerusakan', ['RINGAN', 'SEDANG', 'BERAT']);;
             $table->double('bobot_kriteria');
             $table->timestamps();
         });
