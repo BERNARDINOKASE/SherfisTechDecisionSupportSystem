@@ -37,6 +37,78 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
+                <div class="col-md-4">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Tabel Batasan Nilai</h3>
+                            </div>
+    
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Tingkat</th>
+                                            <th style="width: 10px">Batas</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>RINGAN</td>
+                                                <td>{{$ringan}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>2</td>
+                                                <td>SEDANG</td>
+                                                <td>{{$sedang}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>3</td>
+                                                <td>BERAT</td>
+                                                <td>{{$berat}}</td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    <!-- /.card -->
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Tabel Normalisasi</h3>
+                            </div>
+    
+                            <!-- /.card-header -->
+                            <div class="card-body">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 10px">#</th>
+                                            <th>Nama</th>
+                                            <th style="width: 10px">Bobot</th>
+                                            <th>Normalisasi</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($data as $item)
+                                            <tr>
+                                                <td>{{$loop->iteration}}</td>
+                                                <td>{{$item->nama_kriteria}}</td>
+                                                <td>{{$item->bobot_kriteria}}</td>
+                                                <td>{{$item->bobot_kriteria/$sum}}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    <!-- /.card -->
+                    </div>
+                </div>
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header">
@@ -52,9 +124,10 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th>Id Kriteria</th>
-                                        <th>Nama Kriteria</th>
-                                        <th>Bobot Kriteria</th>
+                                        <th>Id</th>
+                                        <th>Nama</th>
+                                        <th>Tingkat Kerusakan</th>
+                                        <th style="width: 10px">Bobot</th>
                                         <th style="width: 40px">Aksi</th>
                                     </tr>
                                 </thead>
@@ -64,6 +137,7 @@
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$item->id_kriteria}}</td>
                                             <td>{{$item->nama_kriteria}}</td>
+                                            <td>{{$item->tingkat_kerusakan}}</td>
                                             <td>{{$item->bobot_kriteria}}</td>
                                             <td>
                                                 <a href="{{route('kriteria.edit', $item->id_kriteria)}}" class="btn btn-sm btn-warning m-1" title="Ubah"><i class="fas fa-pen"></i></a>

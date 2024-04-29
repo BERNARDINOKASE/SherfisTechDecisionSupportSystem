@@ -39,6 +39,15 @@
                                 <input type="text" class="form-control" id="nama_kriteria" name="nama_kriteria" value="{{$data->nama_kriteria}}">
                             </div>
                             <div class="form-group">
+                                <label for="bobot_kriteria">Tingkat Kerusakan</label>
+                                <select class="form-control select2" style="width: 100%;" name="tingkat_kerusakan">
+                                    <option selected="selected" value="">-Tingkat Kerusakan-</option>
+                                    <option value="RINGAN">RINGAN</option>
+                                    <option value="SEDANG">SEDANG</option>
+                                    <option value="BERAT">BERAT</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label for="bobot_kriteria">Bobot Kriteria</label>
                                 <input type="number" class="form-control" id="bobot_kriteria" name="bobot_kriteria" value="{{$data->bobot_kriteria}}">
                             </div>
