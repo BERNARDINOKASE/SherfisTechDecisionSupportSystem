@@ -13,7 +13,7 @@ class Nilai extends Model
     protected $fillable = [
         'id_alternatif',
         'id_kriteria',
-        'id_subkriteria',
+        'kondisi'
     ];
 
     /**

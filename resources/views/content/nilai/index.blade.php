@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Tabel Alternatif</h1>
+                    <h1>Tabel Data Laptop</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                        <li class="breadcrumb-item active">Tabel Alternatif</li>
+                        <li class="breadcrumb-item active">Tabel Data Laptop</li>
                     </ol>
                 </div>
             </div>
@@ -40,10 +40,10 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Tabel Alternatif</h3>
+                            <h3 class="card-title">Tabel Data Laptop {{$alternatif->nama_alternatif}}</h3>
                         </div>
                         <div class="card-body">
-                            <a href="{{route('alternatif.create')}}" class="btn btn-md btn-primary">Tambah Alternatif</a>
+                            <a href="{{route('nilai.create', $alternatif->id_alternatif)}}" class="btn btn-md btn-primary">Tambah Data Laptop</a>
                         </div>
 
                         <!-- /.card-header -->
@@ -52,24 +52,30 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th style="width: 200px">Id Alternatif</th>
-                                        <th>Nama Alternatif</th>
-                                        <th>Data Laptop</th>
-                                        <th style="width: 10px">Aksi</th>
+                                        <th>id Kriteria</th>
+                                        <th>Kondisi</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($data as $item)
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
-                                            <td>{{$item->id_alternatif}}</td>
-                                            <td>{{$item->nama_alternatif}}</td>
-                                            <td>
-                                                <a href="{{route('nilai.index', $item->id_alternatif)}}" class="btn btn-sm btn-success d-flex justify-content-center"><i class="fas fa-plus"></i></a>
-                                            </td>
+                                            <td>{{$item->id_kriteria}}</td>
+                                            {{-- <td>{{$item->kriteria}}</td> --}}
+                                            @if ($item->kondisi == 1)
+                                                <td>Normal (0)</td>
+                                            @elseif($item->kondisi == 3)
+                                                <td>Perbaikan Kecil (3)</td>
+                                            @elseif($item->kondisi == 5)
+                                                <td>Perbaikan Besar (5)</td>
+                                            @elseif($item->kondisi == 10)
+                                                <td>Ganti Komponen (10)</td>
+                                            @endif
+                                            {{-- <td>{{$item->kondisi}}</td> --}}
                                             <td> 
-                                                <a href="{{route('alternatif.edit', $item->id_alternatif)}}" class="btn btn-sm btn-warning m-1" title="Ubah"><i class="fas fa-pen"></i></a>
-                                                <form action="{{route('alternatif.delete', $item->id_alternatif)}}" method="POST">
+                                                {{-- <a href="{{route('alternatif.edit', $item->id_alternatif)}}" class="btn btn-sm btn-warning m-1" title="Ubah"><i class="fas fa-pen"></i></a> --}}
+                                                <form action="{{route('nilai.delete', $item->id)}}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button type="submit" class="btn btn-sm btn-danger m-1" title="Hapu"><i class="fas fa-trash"></i></button>
@@ -80,26 +86,6 @@
                                 </tbody>
                             </table>
                         </div>
-                        <!-- /.card-body -->
-                        {{-- <div class="card-footer clearfix">
-                            <ul class="pagination pagination-sm m-0 float-right">
-                                <li class="page-item">
-                                <a class="page-link" href="#">&laquo;</a>
-                                </li>
-                                <li class="page-item">
-                                <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item">
-                                <a class="page-link" href="#">3</a>
-                                </li>
-                                <li class="page-item">
-                                <a class="page-link" href="#">&raquo;</a>
-                                </li>
-                            </ul>
-                        </div> --}}
                     </div>
                 <!-- /.card -->
                 </div>

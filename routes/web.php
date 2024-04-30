@@ -72,8 +72,8 @@ Route::controller(NilaiController::class)
     ->middleware('auth')
     ->prefix('nilai')
     ->group(function () {
-        Route::get('/', 'index')->name('nilai.index');
-        Route::get('/tambah', 'create')->name('nilai.create');
+        Route::get('/alternatif={id}', 'index')->name('nilai.index');
+        Route::get('/alternatif={id}/tambah', 'create')->name('nilai.create');
         Route::post('/tambah', 'store')->name('nilai.store');
         Route::delete('hapus={id}', 'destroy')->name('nilai.delete');
     });
