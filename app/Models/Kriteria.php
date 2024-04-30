@@ -18,12 +18,12 @@ class Kriteria extends Model
     ];
 
     /**
-     * Get the user associated with the Kriteria
+     * Get the subkriteria that owns the Kriteria
      *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function subkriteria()
     {
-        return $this->hasOne(SubKriteria::class);
+        return $this->belongsTo(SubKriteria::class);
     }
 }

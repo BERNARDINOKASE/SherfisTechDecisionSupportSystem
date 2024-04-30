@@ -23,7 +23,6 @@ class KriteriaController extends Controller
             $sedang = $sdg / $sum;
             $berat = $brt / $sum;
         }
-        // dd($data);
         return view('content.kriteria.index', compact('data', 'sum', 'ringan', 'sedang', 'berat'));
     }
     public function create()

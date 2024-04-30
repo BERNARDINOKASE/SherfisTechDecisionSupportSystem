@@ -141,7 +141,7 @@
                                             <td>{{$item->tingkat_kerusakan}}</td>
                                             <td>{{$item->bobot_kriteria}}</td>
                                             <td>
-                                                <a href="" class="btn btn-sm btn-success d-flex justify-content-center"><i class="fas fa-plus"></i></a>
+                                                <a href="{{route('subkriteria.index', $item->id_kriteria)}}" class="btn btn-sm btn-success d-flex justify-content-center"><i class="fas fa-eye"></i></a>
                                             </td>
                                             <td>
                                                 <a href="{{route('kriteria.edit', $item->id_kriteria)}}" class="btn btn-sm btn-warning m-1" title="Ubah"><i class="fas fa-pen"></i></a>
