@@ -13,4 +13,15 @@ class Alternatif extends Model
         'id_alternatif',
         'nama_alternatif',
     ];
+
+
+    /**
+     * Get the nilai that owns the Kriteria
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function nilai()
+    {
+        return $this->belongsTo(Nilai::class);
+    }
 }

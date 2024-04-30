@@ -26,4 +26,14 @@ class Kriteria extends Model
     {
         return $this->belongsTo(SubKriteria::class);
     }
+
+    /**
+     * Get the nilai that owns the Kriteria
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function nilai()
+    {
+        return $this->belongsTo(Nilai::class);
+    }
 }
