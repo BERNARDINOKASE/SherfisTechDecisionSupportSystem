@@ -16,4 +16,14 @@ class Kriteria extends Model
         'tingkat_kerusakan',
         'bobot_kriteria'
     ];
+
+    /**
+     * Get the user associated with the Kriteria
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function subkriteria()
+    {
+        return $this->hasOne(SubKriteria::class);
+    }
 }
