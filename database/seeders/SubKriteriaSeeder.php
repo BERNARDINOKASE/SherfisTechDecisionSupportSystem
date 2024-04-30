@@ -35,7 +35,7 @@ class SubKriteriaSeeder extends Seeder
             ], [
                 'id_kriteria' => 'KRITERIA-1',
                 'nama_subkriteria' => 'GANTI KOMPONEN',
-                'nilai_subkriteria' => 5,
+                'nilai_subkriteria' => 10,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],  [
@@ -59,7 +59,7 @@ class SubKriteriaSeeder extends Seeder
             ], [
                 'id_kriteria' => 'KRITERIA-2',
                 'nama_subkriteria' => 'GANTI KOMPONEN',
-                'nilai_subkriteria' => 5,
+                'nilai_subkriteria' => 10,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],  [
@@ -83,7 +83,7 @@ class SubKriteriaSeeder extends Seeder
             ], [
                 'id_kriteria' => 'KRITERIA-3',
                 'nama_subkriteria' => 'GANTI KOMPONEN',
-                'nilai_subkriteria' => 5,
+                'nilai_subkriteria' => 10,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],  [
@@ -107,7 +107,7 @@ class SubKriteriaSeeder extends Seeder
             ], [
                 'id_kriteria' => 'KRITERIA-4',
                 'nama_subkriteria' => 'GANTI KOMPONEN',
-                'nilai_subkriteria' => 5,
+                'nilai_subkriteria' => 10,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],  [
@@ -131,7 +131,7 @@ class SubKriteriaSeeder extends Seeder
             ], [
                 'id_kriteria' => 'KRITERIA-5',
                 'nama_subkriteria' => 'GANTI KOMPONEN',
-                'nilai_subkriteria' => 5,
+                'nilai_subkriteria' => 10,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],  [
@@ -155,7 +155,7 @@ class SubKriteriaSeeder extends Seeder
             ], [
                 'id_kriteria' => 'KRITERIA-6',
                 'nama_subkriteria' => 'GANTI KOMPONEN',
-                'nilai_subkriteria' => 5,
+                'nilai_subkriteria' => 10,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],  [
@@ -179,7 +179,7 @@ class SubKriteriaSeeder extends Seeder
             ], [
                 'id_kriteria' => 'KRITERIA-7',
                 'nama_subkriteria' => 'GANTI KOMPONEN',
-                'nilai_subkriteria' => 5,
+                'nilai_subkriteria' => 10,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],  [
@@ -203,7 +203,7 @@ class SubKriteriaSeeder extends Seeder
             ], [
                 'id_kriteria' => 'KRITERIA-8',
                 'nama_subkriteria' => 'GANTI KOMPONEN',
-                'nilai_subkriteria' => 5,
+                'nilai_subkriteria' => 10,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],  [
@@ -227,7 +227,7 @@ class SubKriteriaSeeder extends Seeder
             ], [
                 'id_kriteria' => 'KRITERIA-9',
                 'nama_subkriteria' => 'GANTI KOMPONEN',
-                'nilai_subkriteria' => 5,
+                'nilai_subkriteria' => 10,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],  [
@@ -251,7 +251,7 @@ class SubKriteriaSeeder extends Seeder
             ], [
                 'id_kriteria' => 'KRITERIA-10',
                 'nama_subkriteria' => 'GANTI KOMPONEN',
-                'nilai_subkriteria' => 5,
+                'nilai_subkriteria' => 10,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],  [
@@ -275,7 +275,7 @@ class SubKriteriaSeeder extends Seeder
             ], [
                 'id_kriteria' => 'KRITERIA-11',
                 'nama_subkriteria' => 'GANTI KOMPONEN',
-                'nilai_subkriteria' => 5,
+                'nilai_subkriteria' => 10,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],  [
@@ -299,7 +299,7 @@ class SubKriteriaSeeder extends Seeder
             ], [
                 'id_kriteria' => 'KRITERIA-12',
                 'nama_subkriteria' => 'GANTI KOMPONEN',
-                'nilai_subkriteria' => 5,
+                'nilai_subkriteria' => 10,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],  [
@@ -323,7 +323,7 @@ class SubKriteriaSeeder extends Seeder
             ], [
                 'id_kriteria' => 'KRITERIA-13',
                 'nama_subkriteria' => 'GANTI KOMPONEN',
-                'nilai_subkriteria' => 5,
+                'nilai_subkriteria' => 10,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],  [
@@ -347,7 +347,7 @@ class SubKriteriaSeeder extends Seeder
             ], [
                 'id_kriteria' => 'KRITERIA-14',
                 'nama_subkriteria' => 'GANTI KOMPONEN',
-                'nilai_subkriteria' => 5,
+                'nilai_subkriteria' => 10,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
