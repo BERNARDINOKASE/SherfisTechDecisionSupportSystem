@@ -70,7 +70,7 @@ Route::controller(SubKriteriaController::class)
 
 Route::controller(NilaiController::class)
     ->middleware('auth')
-    ->prefix('subkriteria')
+    ->prefix('nilai')
     ->group(function () {
         Route::get('/', 'index')->name('nilai.index');
         Route::get('/tambah', 'create')->name('nilai.create');
