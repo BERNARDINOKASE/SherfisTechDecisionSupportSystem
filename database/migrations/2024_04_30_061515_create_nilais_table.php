@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('nilais', function (Blueprint $table) {
             $table->id();
-            $table->string('id_kriteria');
             $table->string('id_alternatif');
+            $table->string('id_kriteria');
             $table->foreignId('id_subkriteria');
             $table->foreign('id_kriteria')->references('id_kriteria')->on('kriterias');
             $table->foreign('id_alternatif')->references('id_alternatif')->on('alternatifs');
