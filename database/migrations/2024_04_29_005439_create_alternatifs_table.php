@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('alternatifs', function (Blueprint $table) {
             $table->string('id_alternatif')->primary();
             $table->string('nama_alternatif', 50);
+            $table->double('vektor_s')->default(0);
+            $table->double('vektor_v')->default(0);
+            $table->integer('rangking')->default(0);
             $table->timestamps();
         });
     }
