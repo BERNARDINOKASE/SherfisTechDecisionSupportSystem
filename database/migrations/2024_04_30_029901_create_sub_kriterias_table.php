@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('subkriterias', function (Blueprint $table) {
+        Schema::create('sub_kriterias', function (Blueprint $table) {
             $table->id('id');
             $table->string('nama_subkriteria', 50);
             $table->integer('nilai_subkriteria');
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('subkriterias');
+        Schema::dropIfExists('sub_kriterias');
     }
 };

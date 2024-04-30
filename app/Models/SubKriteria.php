@@ -8,20 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class SubKriteria extends Model
 {
     use HasFactory;
-
     protected $guard = [];
     protected $fillable = [
         'nama_subkriteria',
-        'nilai_subkriteria'
+        'nilai_subkriteria',
+        'id_kriteria'
     ];
 
     /**
      * Get the kriteria that owns the SubKriteria
      *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
      */
     public function kriteria()
     {
-        return $this->belongsTo(Kriteria::class);
+        return $this->hasMany(Kriteria::class);
     }
 }
