@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('nilais', function (Blueprint $table) {
             $table->id();
-            $table->string('id_alternatif');
-            $table->string('id_kriteria');
-            $table->foreignId('id_subkriteria');
+            $table->string('id_alternatif')->nullable();
+            $table->string('id_kriteria')->nullable();
+            $table->foreignId('id_subkriteria')->nullable();
             $table->foreign('id_kriteria')->references('id_kriteria')->on('kriterias');
             $table->foreign('id_alternatif')->references('id_alternatif')->on('alternatifs');
             $table->foreign('id_subkriteria')->references('id')->on('sub_kriterias');
