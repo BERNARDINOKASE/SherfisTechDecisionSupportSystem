@@ -3,6 +3,8 @@
 use App\Http\Controllers\AlternatifController;
 use App\Http\Controllers\Auth\AuthenticateController;
 use App\Http\Controllers\KriteriaController;
+use App\Http\Controllers\NilaiController;
+use App\Http\Controllers\SubKriteriaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,6 +41,9 @@ Route::controller(KriteriaController::class)
         Route::patch('/ubah={id}', 'update')->name('kriteria.update');
         Route::post('/tambah', 'store')->name('kriteria.store');
         Route::delete('hapus={id}', 'destroy')->name('kriteria.delete');
+
+
+        Route::get('/subkriteria', 'destroy')->name('kriteria.delete');
     });
 
 Route::controller(AlternatifController::class)
@@ -51,4 +56,24 @@ Route::controller(AlternatifController::class)
         Route::patch('/ubah={id}', 'update')->name('alternatif.update');
         Route::post('/tambah', 'store')->name('alternatif.store');
         Route::delete('hapus={id}', 'destroy')->name('alternatif.delete');
+    });
+
+Route::controller(SubKriteriaController::class)
+    ->middleware('auth')
+    ->prefix('subkriteria')
+    ->group(function () {
+        Route::get('/kriteria={id}', 'index')->name('subkriteria.index');
+        Route::get('/tambah', 'create')->name('subkriteria.create');
+        Route::post('/tambah', 'store')->name('subkriteria.store');
+        Route::delete('hapus={id}', 'destroy')->name('subkriteria.delete');
+    });
+
+Route::controller(NilaiController::class)
+    ->middleware('auth')
+    ->prefix('subkriteria')
+    ->group(function () {
+        Route::get('/', 'index')->name('nilai.index');
+        Route::get('/tambah', 'create')->name('nilai.create');
+        Route::post('/tambah', 'store')->name('nilai.store');
+        Route::delete('hapus={id}', 'destroy')->name('nilai.delete');
     });
