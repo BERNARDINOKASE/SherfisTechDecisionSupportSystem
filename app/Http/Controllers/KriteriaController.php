@@ -14,10 +14,16 @@ class KriteriaController extends Controller
         $rgn = Kriteria::where('tingkat_kerusakan', 'RINGAN')->max('bobot_kriteria');
         $sdg = Kriteria::where('tingkat_kerusakan', 'SEDANG')->max('bobot_kriteria');
         $brt = Kriteria::where('tingkat_kerusakan', 'BERAT')->max('bobot_kriteria');
-        $ringan = $rgn / $sum;
-        $sedang = $sdg / $sum;
-        $berat = $brt / $sum;
-        // dd($ringan);
+        if ($sum == null) {
+            $ringan = 0;
+            $sedang = 0;
+            $berat = 0;
+        } else {
+            $ringan = $rgn / $sum;
+            $sedang = $sdg / $sum;
+            $berat = $brt / $sum;
+        }
+        // dd($data);
         return view('content.kriteria.index', compact('data', 'sum', 'ringan', 'sedang', 'berat'));
     }
     public function create()
