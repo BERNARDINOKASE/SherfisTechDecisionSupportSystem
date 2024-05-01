@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::table('sub_kriterias', function (Blueprint $table) {
             $table->string('id_kriteria')->after('id');
-            $table->foreign('id_kriteria')->references('id_kriteria')->on('kriterias');
+            $table->foreign('id_kriteria')->references('id_kriteria')->on('kriterias')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
