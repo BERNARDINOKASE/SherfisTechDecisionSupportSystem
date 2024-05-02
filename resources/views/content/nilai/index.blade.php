@@ -37,15 +37,40 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Tabel Data Kriteria</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 10px">#</th>
+                                        <th>Id Kriteria</th>
+                                        <th>Nama Kriteria</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($kriteria as $item)
+                                        <tr>
+                                            <td>{{$loop->iteration}}</td>
+                                            <td>{{$item->id_kriteria}}</td>
+                                            <td>{{$item->nama_kriteria}}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                <!-- /.card -->
+                </div>
+                <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">Tabel Data Laptop {{$alternatif->nama_alternatif}}</h3>
                         </div>
-                        <div class="card-body">
-                            <a href="{{route('nilai.create', $alternatif->id_alternatif)}}" class="btn btn-md btn-primary">Tambah Data Laptop</a>
-                        </div>
-
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table class="table table-bordered">
@@ -62,24 +87,36 @@
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
                                             <td>{{$item->id_kriteria}}</td>
-                                            {{-- <td>{{$item->kriteria}}</td> --}}
-                                            @if ($item->kondisi == 1)
-                                                <td>Normal (0)</td>
-                                            @elseif($item->kondisi == 3)
-                                                <td>Perbaikan Kecil (3)</td>
-                                            @elseif($item->kondisi == 5)
-                                                <td>Perbaikan Besar (5)</td>
-                                            @elseif($item->kondisi == 10)
-                                                <td>Ganti Komponen (10)</td>
+                                            {{-- @if ($item->id_subkriteria == null)
+                                                <td>Belum diketahui</td>
+                                            @else
+                                            <td>{{$item->subkriteria->nama_subkriteria}}</td>
+                                            @endif --}}
+                                            @if ($item->kondisi == null)
+                                                <td></td>
                                             @endif
+                                            @if ($item->kondisi == 1)
+                                                {{-- <td>{{$item->nilai}}</td> --}}
+                                                <td>Normal</td>
+                                            @endif
+                                            @if ($item->kondisi == 3)
+                                                <td>Perbaikan Kecil</td>
+                                            @endif
+                                            @if ($item->kondisi == 5)
+                                                <td>Perbaikan Besar</td>
+                                            @endif
+                                            @if ($item->kondisi == 10)
+                                                <td>Ganti Komponen</td>
+                                            @endif
+                                            {{-- <td>{{$item->kriteria}}</td> --}}
                                             {{-- <td>{{$item->kondisi}}</td> --}}
                                             <td> 
-                                                {{-- <a href="{{route('alternatif.edit', $item->id_alternatif)}}" class="btn btn-sm btn-warning m-1" title="Ubah"><i class="fas fa-pen"></i></a> --}}
-                                                <form action="{{route('nilai.delete', $item->id)}}" method="POST">
+                                                <a href="{{route('nilai.edit', $item->id)}}" class="btn btn-sm btn-warning" title="Ubah"><i class="fas fa-pen"></i></a>
+                                                {{-- <form action="{{route('nilai.delete', $item->id)}}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button type="submit" class="btn btn-sm btn-danger m-1" title="Hapu"><i class="fas fa-trash"></i></button>
-                                                </form>
+                                                </form> --}}
                                             </td>
                                         </tr>
                                     @endforeach

@@ -46,41 +46,42 @@
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form action="{{route('nilai.store')}}" method="POST">
+                        <form action="{{route('nilai.update', $nilai->id)}}" method="POST">
+                            @method('patch')
                             @csrf
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="nama_kriteria">Nama Alternatif</label>
                                     {{-- <input disabled type="text" class="form-control" value="{{$alternatif->nama_alternatif}}"> --}}
                                     {{-- <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea> --}}
-                                    <input type="text" class="form-control" id="id_alternatif" name="id_alternatif" value="{{$alternatif->id_alternatif}}" readonly>
+                                    <input type="text" class="form-control" id="id_alternatif" name="id_alternatif" value="{{$nilai->id_alternatif}}" readonly>
                                     @if ($errors->has('id_alternatif'))
-                                        <span class="text-danger">{{$errors->first('id_alternatif')}}</span>
+                                    <span class="text-danger">{{$errors->first('id_alternatif')}}</span>
                                     @endif
                                 </div>
                                 <div class="form-group">
                                     <label for="">Kriteria</label>
-                                    <select class="form-control" id="id_kriteria" name="id_kriteria">
-                                        <option value="">-- Nama Kriteria --</option>
-                                        @foreach ($kriteria as $item)
-                                            <option value="{{$item->id_kriteria}}">{{$item->nama_kriteria}}</option>
-                                        @endforeach
-                                    </select>
+                                    <input type="text" class="form-control" id="id_kriteria" name="id_kriteria" value="{{$nilai->id_kriteria}}" readonly>
                                     @if ($errors->has('id_kriteria'))
                                         <span class="text-danger">{{$errors->first('id_kriteria')}}</span>
                                     @endif
                                 </div>
                                 <div class="form-group">
-                                    <label for="kondisi">Kondisi</label>
+                                    {{-- <label for="nilai">Subkriteria</label> --}}
+                                    <label for="kondisi">Nilai</label>
                                     <select class="form-control" id="kondisi" name="kondisi">
-                                        <option value="">-- Kondisi --</option>
+                                            {{-- <option value="">-- Subkriteria --</option>
+                                            @foreach ($subkriteria as $item)
+                                            <option value="{{$item->id}}">id : {{$item->id}} |{{$item->nama_subkriteria}} - {{$item->nilai_subkriteria}}</option>
+                                            @endforeach --}}
+                                            <option value="">-- Nilai --</option>
                                             <option value="1">Normal</option>
                                             <option value="3">Perbaikan Kecil</option>
                                             <option value="5">Perbaikan Besar</option>
                                             <option value="10">Ganti Komponen</option>
                                     </select>
-                                    @if ($errors->has('kondisi'))
-                                        <span class="text-danger">{{$errors->first('kondisi')}}</span>
+                                    @if ($errors->has('id_subkriteria'))
+                                        <span class="text-danger">{{$errors->first('id_subkriteria')}}</span>
                                     @endif
                                 </div>
                             </div>
