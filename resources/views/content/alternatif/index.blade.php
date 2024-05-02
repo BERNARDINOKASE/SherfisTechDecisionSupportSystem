@@ -55,7 +55,7 @@
                                         <th style="width: 200px">Id Alternatif</th>
                                         <th>Nama Alternatif</th>
                                         <th>Data Laptop</th>
-                                        <th style="width: 10px">Aksi</th>
+                                        <th style="width: 100px">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -67,7 +67,7 @@
                                             <td>
                                                 <a href="{{route('nilai.index', $item->id_alternatif)}}" class="btn btn-sm btn-success d-flex justify-content-center"><i class="fas fa-plus"></i></a>
                                             </td>
-                                            <td> 
+                                            <td class="d-flex d-inline-flex"> 
                                                 <a href="{{route('alternatif.edit', $item->id_alternatif)}}" class="btn btn-sm btn-warning m-1" title="Ubah"><i class="fas fa-pen"></i></a>
                                                 <form action="{{route('alternatif.delete', $item->id_alternatif)}}" method="POST">
                                                     @method('DELETE')

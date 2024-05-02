@@ -41,44 +41,6 @@
                     <div class="col">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Tabel Batasan Nilai</h3>
-                            </div>
-    
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th style="width: 10px">#</th>
-                                            <th>Tingkat</th>
-                                            <th style="width: 10px">Batas</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>RINGAN</td>
-                                                <td>{{$ringan}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>SEDANG</td>
-                                                <td>{{$sedang}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>BERAT</td>
-                                                <td>{{$berat}}</td>
-                                            </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    <!-- /.card -->
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-header">
                                 <h3 class="card-title">Tabel Normalisasi</h3>
                             </div>
     
