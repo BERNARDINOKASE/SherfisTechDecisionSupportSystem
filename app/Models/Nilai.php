@@ -13,6 +13,7 @@ class Nilai extends Model
     protected $fillable = [
         'id_alternatif',
         'id_kriteria',
+        // 'id_subkriteria',
         'kondisi'
     ];
 
@@ -23,7 +24,7 @@ class Nilai extends Model
      */
     public function kriteria()
     {
-        return $this->hasMany(Kriteria::class);
+        return $this->belongsTo(Kriteria::class, 'id_kriteria');
     }
 
     /**
@@ -33,16 +34,6 @@ class Nilai extends Model
      */
     public function alternatif()
     {
-        return $this->hasMany(Alternatif::class);
-    }
-
-    /**
-     * Get all of the subkriteria for the Nilai
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function subkriteria()
-    {
-        return $this->hasMany(SubKriteria::class);
+        return $this->belongsTo(Alternatif::class, 'id_alternatif');
     }
 }

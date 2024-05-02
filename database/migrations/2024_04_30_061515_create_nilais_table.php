@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('id_alternatif')->nullable();
             $table->string('id_kriteria')->nullable();
-            $table->foreignId('id_subkriteria')->nullable();
+            // $table->foreignId('id_subkriteria')->nullable();
+            $table->integer('kondisi')->nullable();
             $table->foreign('id_kriteria')->references('id_kriteria')->on('kriterias')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('id_alternatif')->references('id_alternatif')->on('alternatifs')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreign('id_subkriteria')->references('id')->on('sub_kriterias')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('id_subkriteria')->references('id')->on('sub_kriterias')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,10 +32,11 @@ return new class extends Migration
         Schema::dropIfExists('nilais', function (Blueprint $table) {
             $table->dropForeign('id_alternatif');
             $table->dropForeign('id_kriteria');
-            $table->dropForeign('id_subkriteria');
+            // $table->dropForeign('id_subkriteria');
             $table->dropColumn('id_alternatif');
             $table->dropColumn('id_kriteria');
-            $table->dropColumn('id_subkriteria');
+            $table->dropColumn('kondisi');
+            // $table->dropColumn('id_subkriteria');
         });
     }
 };
