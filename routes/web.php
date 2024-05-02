@@ -84,6 +84,7 @@ Route::controller(WPController::class)
     ->prefix('metode')
     ->group(function () {
         Route::get('/', 'index')->name('metode.index');
+        Route::get('/vektor-s', 'vektor_s')->name('metode.vektor_s');
         // Route::get('/alternatif={id}/tambah', 'create')->name('nilai.create');
         // Route::post('/tambah', 'store')->name('nilai.store');
         // Route::delete('hapus={id}', 'destroy')->name('nilai.delete');
