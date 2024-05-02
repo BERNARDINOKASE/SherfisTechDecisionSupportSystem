@@ -32,6 +32,6 @@ class SubKriteria extends Model
      */
     public function nilai()
     {
-        return $this->belongsTo(Nilai::class);
+        return $this->hasMany(Nilai::class);
     }
 }
