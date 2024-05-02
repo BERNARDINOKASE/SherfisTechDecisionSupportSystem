@@ -33,7 +33,7 @@ class AlternatifController extends Controller
 
         // $kriteria = Kriteria::select('id_kriteria')->first();
 
-        $kriteria = Kriteria::all();
+        $kriteria = Kriteria::orderBy('created_at', 'asc')->select('id_kriteria')->get();
         $nilai = [];
 
         foreach ($kriteria as $key => $value) {
