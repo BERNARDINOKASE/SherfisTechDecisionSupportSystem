@@ -14,7 +14,7 @@ class NilaiController extends Controller
     {
         $alternatif = Alternatif::where('id_alternatif', $id_alternatif)->select('id_alternatif', 'nama_alternatif')->first();
         // $data = Nilai::where('id_alternatif', $id)->orderBy('created_at', 'asc')->get();
-        $kriteria = Kriteria::select('id_kriteria', 'nama_kriteria')->get();
+        $kriteria = Kriteria::select('id_kriteria', 'nama_kriteria')->orderBy('created_at')->get();
         $data = Nilai::where('id_alternatif', $id_alternatif)->orderBy('created_at', 'asc')->get();
         return view('content.nilai.index', compact('data', 'alternatif', 'kriteria'));
     }
