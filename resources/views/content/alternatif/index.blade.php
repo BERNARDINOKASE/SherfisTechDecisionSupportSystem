@@ -44,6 +44,7 @@
                         </div>
                         <div class="card-body">
                             <a href="{{route('alternatif.create')}}" class="btn btn-md btn-primary">Tambah Alternatif</a>
+                            <a href="{{route('metode.proses-data')}}" class="btn btn-md btn-primary">Proses Pengambilan Keputusan</a>
                         </div>
 
                         <!-- /.card-header -->

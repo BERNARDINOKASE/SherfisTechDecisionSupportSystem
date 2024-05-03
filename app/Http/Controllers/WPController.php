@@ -23,6 +23,13 @@ class WPController extends Controller
         return view('content.metode.index', compact('kriteria', 'alternatif', 'nilai', 'hasil_vektor_s_all'));
     }
 
+    public function weightingProductPorcess()
+    {
+        $this->vektor_s();
+        $this->vektor_v();
+        return redirect()->back();
+    }
+
     public function vektor_s()
     {
         $alternatif = Alternatif::pluck('id_alternatif')->toArray();
@@ -51,13 +58,27 @@ class WPController extends Controller
             }
 
             $hasil_vektor_s = array_product($vektor_s);
-            // $hasil_vektor_s_all[] = $hasil_vektor_s;
-            // Alternatif::where('id_alternatif', $alt)->update(['vektor_s' => $hasil_vektor_s_all]);
             DB::table('alternatifs')->where('id_alternatif', $alt)->update(['vektor_s' => $hasil_vektor_s]);
         }
+    }
 
-        // return $hasil_vektor_s_all;
-        // dd($hasil_vektor_s_all);
-        // return view('content.metode.index', compact('hasil_vektor_s_all'));
+    public function vektor_v()
+    {
+
+        $alternatif = Alternatif::pluck('id_alternatif')->toArray();
+        $sum_vektor_s = Alternatif::sum('vektor_s');
+        foreach ($alternatif as $alt) {
+            $vektor_v = [];
+            $vektor_s[] = Alternatif::where('id_alternatif', $alt)->select('vektor_s')->first();
+
+            foreach ($vektor_s as $value) {
+                $vektor_v = $value->vektor_s / $sum_vektor_s;
+            }
+
+            // $hasil_vektor_v[] = array_product($vektor_v);
+            DB::table('alternatifs')->where('id_alternatif', $alt)->update(['vektor_v' => $vektor_v]);
+        }
+        // dd($vektor_v);
+        // dd($hasil_vektor_v);
     }
 }

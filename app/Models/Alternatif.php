@@ -12,6 +12,8 @@ class Alternatif extends Model
     protected $fillable = [
         'id_alternatif',
         'nama_alternatif',
+        'vektor_s',
+        'vektor_v'
     ];
 
 
