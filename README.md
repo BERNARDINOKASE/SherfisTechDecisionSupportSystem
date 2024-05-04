@@ -23,9 +23,10 @@ Sebelum memulai, pastikan sistem Anda memenuhi persyaratan berikut:
     Masuk ke direktori proyek dan jalankan perintah berikut:
 
     ```bash
-    cd nama-proyek
+    cd SherfisTechDecisionSupportSystem
     composer install
     npm install && npm run dev
+    cp .env.example .env
     ```
 
 3. **Konfigurasi Lingkungan**
@@ -33,7 +34,10 @@ Sebelum memulai, pastikan sistem Anda memenuhi persyaratan berikut:
     Duplikat file `.env.example` dan ganti namanya menjadi `.env`. Kemudian sesuaikan pengaturan database dan konfigurasi lainnya sesuai kebutuhan Anda.
 
     ```bash
-    cp .env.example .env
+    APP_DEBUG=true
+    DB_DATABASE=decisionsupportsystem
+    DB_USERNAME=your-username
+    DB_PASSWORD=your-password
     ```
 
 4. **Migrasi Database**
@@ -41,7 +45,7 @@ Sebelum memulai, pastikan sistem Anda memenuhi persyaratan berikut:
     Setelah mengonfigurasi file `.env`, jalankan migrasi database untuk membuat tabel-tabel yang diperlukan:
 
     ```bash
-    php artisan migrate
+    php artisan migrate --seed
     ```
 
 5. **Generate Kunci Aplikasi**
