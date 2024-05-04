@@ -8,7 +8,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('beranda')}}">Beranda</a></li>
                         <li class="breadcrumb-item active">Tabel Kriteria</li>
                     </ol>
                 </div>
@@ -90,7 +90,6 @@
                                         <th>Nama</th>
                                         <th>Tingkat Kerusakan</th>
                                         <th style="width: 10px">Bobot</th>
-                                        <th>Sub Kriteria</th>
                                         <th style="width: 40px">Aksi</th>
                                     </tr>
                                 </thead>
@@ -102,9 +101,6 @@
                                             <td>{{$item->nama_kriteria}}</td>
                                             <td>{{$item->tingkat_kerusakan}}</td>
                                             <td>{{$item->bobot_kriteria}}</td>
-                                            <td>
-                                                <a href="{{route('subkriteria.index', $item->id_kriteria)}}" class="btn btn-sm btn-success d-flex justify-content-center"><i class="fas fa-eye"></i></a>
-                                            </td>
                                             <td>
                                                 <a href="{{route('kriteria.edit', $item->id_kriteria)}}" class="btn btn-sm btn-warning m-1" title="Ubah"><i class="fas fa-pen"></i></a>
                                                 <form action="{{route('kriteria.delete', $item->id_kriteria)}}" method="POST">

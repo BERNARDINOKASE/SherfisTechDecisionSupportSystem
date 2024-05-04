@@ -27,7 +27,8 @@ class WPController extends Controller
     {
         $this->vektor_s();
         $this->vektor_v();
-        return redirect()->back();
+        $this->rank();
+        return to_route('beranda');
     }
 
     public function vektor_s()
@@ -78,7 +79,5 @@ class WPController extends Controller
             // $hasil_vektor_v[] = array_product($vektor_v);
             DB::table('alternatifs')->where('id_alternatif', $alt)->update(['vektor_v' => $vektor_v]);
         }
-        // dd($vektor_v);
-        // dd($hasil_vektor_v);
     }
 }

@@ -10,11 +10,11 @@
                 ><i class="fas fa-bars"></i
             ></a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="index3.html" class="nav-link">Home</a>
+        <li class="nav-item d-none d-sm-inline-block {{ Request::routeIs('beranda*')?'active':'' }}">
+            <a href="{{route('beranda')}}" class="nav-link">Beranda</a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Contact</a>
+        <li class="nav-item d-none d-sm-inline-block {{ Request::routeIs('dashboard.about*')?'active':'' }}">
+            <a href="{{route('dashboard.about')}}" class="nav-link">Tetang SPK</a>
         </li>
     </ul>
 
