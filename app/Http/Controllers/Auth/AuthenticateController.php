@@ -70,4 +70,15 @@ class AuthenticateController extends Controller
         Auth::attempt($login);
         return to_route('beranda');
     }
+
+    public function logout(Request $request)
+    {
+        Auth::guard('auth')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return to_route('login');
+    }
 }

@@ -50,11 +50,9 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link d-flex justify-content-end">
-                        <i
-                            class="nav-icon fas fa-door-open text-danger"
-                        ></i>
-                        <p class="text">Logout</p>
+                    <a href="{{route('logout')}}" class="nav-link">
+                        <i class="nav-icon fas fa-right-from-bucket"></i>
+                        <p class="text-danger">Logout</p>
                     </a>
                 </li>
             </ul>

@@ -27,6 +27,7 @@ Route::controller(AuthenticateController::class)
         Route::get('/register', 'registerView')->name('register');
         Route::post('/register', 'storeRegister')->name('post.register');
         Route::post('/login', 'storeLogin')->name('post.login');
+        Route::get('/logout', 'logout')->name('logout');
     });
 
 Route::controller(DashboardController::class)
