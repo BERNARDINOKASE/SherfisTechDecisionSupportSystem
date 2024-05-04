@@ -30,7 +30,7 @@
                 <!-- Add icons to the links using the .nav-icon class
       with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="{{route('dashboard')}}" class="nav-link">
+                    <a href="{{route('beranda')}}" class="nav-link {{ Request::routeIs('beranda*')?'active':'' }}">
                         <i
                             class="nav-icon fas fa-tachometer-alt"
                         ></i>
@@ -40,46 +40,18 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('alternatif.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                    <a href="{{route('alternatif.index')}}" class="nav-link {{ Request::routeIs('alternatif.index*')?'active':'' }}">
+                        <i class="nav-icon fas fa-user"></i>
                         <p>
                             Alternatif
-                            <span class="right badge badge-danger"
-                                >New</span
-                            >
                         </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{route('kriteria.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                    <a href="{{route('kriteria.index')}}" class="nav-link {{ Request::routeIs('kriteria.index*')?'active':'' }}">
+                        <i class="nav-icon fas fa-wrench"></i>
                         <p>
                             Kriteria
-                            <span class="right badge badge-danger"
-                                >New</span
-                            >
-                        </p>
-                    </a>
-                </li>
-                {{-- <li class="nav-item">
-                    <a href="{{route('nilai.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Nilai
-                            <span class="right badge badge-danger"
-                                >New</span
-                            >
-                        </p>
-                    </a>
-                </li> --}}
-                <li class="nav-item">
-                    <a href="{{route('metode.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
-                        <p>
-                            Metode
-                            <span class="right badge badge-danger"
-                                >New</span
-                            >
                         </p>
                     </a>
                 </li>
