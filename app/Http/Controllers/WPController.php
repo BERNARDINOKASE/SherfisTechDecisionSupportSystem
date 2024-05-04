@@ -27,7 +27,6 @@ class WPController extends Controller
     {
         $this->vektor_s();
         $this->vektor_v();
-        $this->rank();
         return to_route('beranda');
     }
 
