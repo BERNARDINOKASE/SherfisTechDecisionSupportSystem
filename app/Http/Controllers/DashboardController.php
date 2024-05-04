@@ -12,7 +12,7 @@ class DashboardController extends Controller
     {
         $countKriteria = Kriteria::count();
         $countAlternatif = Alternatif::count();
-        $alternatif = Alternatif::all();
+        $alternatif = Alternatif::orderBy('vektor_v', 'desc')->get();
         return view('content.dashboard', compact('countKriteria', 'countAlternatif', 'alternatif'));
     }
     public function about()
