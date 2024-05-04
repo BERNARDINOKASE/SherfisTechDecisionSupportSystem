@@ -41,44 +41,6 @@
                     <div class="col">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Tabel Batasan Nilai</h3>
-                            </div>
-    
-                            <!-- /.card-header -->
-                            <div class="card-body">
-                                <table class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th style="width: 10px">#</th>
-                                            <th>Tingkat</th>
-                                            <th style="width: 10px">Batas</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>RINGAN</td>
-                                                <td>{{$ringan}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>SEDANG</td>
-                                                <td>{{$sedang}}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>BERAT</td>
-                                                <td>{{$berat}}</td>
-                                            </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    <!-- /.card -->
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-header">
                                 <h3 class="card-title">Tabel Normalisasi</h3>
                             </div>
     
@@ -128,6 +90,7 @@
                                         <th>Nama</th>
                                         <th>Tingkat Kerusakan</th>
                                         <th style="width: 10px">Bobot</th>
+                                        <th>Sub Kriteria</th>
                                         <th style="width: 40px">Aksi</th>
                                     </tr>
                                 </thead>
@@ -139,6 +102,9 @@
                                             <td>{{$item->nama_kriteria}}</td>
                                             <td>{{$item->tingkat_kerusakan}}</td>
                                             <td>{{$item->bobot_kriteria}}</td>
+                                            <td>
+                                                <a href="{{route('subkriteria.index', $item->id_kriteria)}}" class="btn btn-sm btn-success d-flex justify-content-center"><i class="fas fa-eye"></i></a>
+                                            </td>
                                             <td>
                                                 <a href="{{route('kriteria.edit', $item->id_kriteria)}}" class="btn btn-sm btn-warning m-1" title="Ubah"><i class="fas fa-pen"></i></a>
                                                 <form action="{{route('kriteria.delete', $item->id_kriteria)}}" method="POST">

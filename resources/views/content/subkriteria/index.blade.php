@@ -4,31 +4,31 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Tabel Alternatif</h1>
+                    <h1>Tabel Subkriteria</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                        <li class="breadcrumb-item active">Tabel Alternatif</li>
+                        <li class="breadcrumb-item active">Tabel Subkriteria</li>
                     </ol>
                 </div>
             </div>
             @if (session ('success'))
-                <div class="col-md-12">
-                    <div class="card bg-gradient-success">
-                        <div class="card-header">
-                            <h3 class="card-title">{{ session ('success') }}</h3>
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
-                                </button>
-                            </div>
-                            <!-- /.card-tools -->
+            <div class="col-md-12">
+                <div class="card bg-gradient-success">
+                    <div class="card-header">
+                        <h3 class="card-title">{{ session ('success') }}</h3>
+                        <div class="card-tools">
+                            <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i>
+                            </button>
                         </div>
-                    <!-- /.card-body -->
+                        <!-- /.card-tools -->
                     </div>
-                    <!-- /.card -->
+                <!-- /.card-body -->
                 </div>
-            @endif
+                <!-- /.card -->
+            </div>
+        @endif
         </div>
         <!-- /.container-fluid -->
     </section>
@@ -40,11 +40,10 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Tabel Alternatif</h3>
+                            <h3 class="card-title">Tabel Subkriteria - {{$idKriteria->nama_kriteria}}</h3>
                         </div>
                         <div class="card-body">
-                            <a href="{{route('alternatif.create')}}" class="btn btn-md btn-primary">Tambah Alternatif</a>
-                            <a href="{{route('metode.proses-data')}}" class="btn btn-md btn-primary">Proses Pengambilan Keputusan</a>
+                            <a href="{{route('subkriteria.create')}}" class="btn btn-md btn-primary">Tambah Subkriteria</a>
                         </div>
 
                         <!-- /.card-header -->
@@ -53,24 +52,18 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th style="width: 200px">Id Alternatif</th>
-                                        <th>Nama Alternatif</th>
-                                        <th>Data Laptop</th>
-                                        <th style="width: 100px">Aksi</th>
+                                        <th>Nama Subkriteria dan nilai</th>
+                                        <th style="width: 10px">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($data as $item)
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
-                                            <td>{{$item->id_alternatif}}</td>
-                                            <td>{{$item->nama_alternatif}}</td>
-                                            <td>
-                                                <a href="{{route('nilai.index', $item->id_alternatif)}}" class="btn btn-sm btn-success d-flex justify-content-center"><i class="fas fa-plus"></i></a>
-                                            </td>
-                                            <td class="d-flex d-inline-flex"> 
-                                                <a href="{{route('alternatif.edit', $item->id_alternatif)}}" class="btn btn-sm btn-warning m-1" title="Ubah"><i class="fas fa-pen"></i></a>
-                                                <form action="{{route('alternatif.delete', $item->id_alternatif)}}" method="POST">
+                                            <td>{{$item->nama_subkriteria}} ({{$item->nilai_subkriteria}})</td>
+                                            <td> 
+                                                {{-- <a href="{{route('alternatif.edit', $item->id)}}" class="btn btn-sm btn-warning m-1" title="Ubah"><i class="fas fa-pen"></i></a> --}}
+                                                <form action="{{route('subkriteria.delete', $item->id)}}" method="POST">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button type="submit" class="btn btn-sm btn-danger m-1" title="Hapu"><i class="fas fa-trash"></i></button>

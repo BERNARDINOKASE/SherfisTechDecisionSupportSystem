@@ -4,12 +4,12 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Tabel Alternatif</h1>
+                    <h1>Metode</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{route('dashboard')}}">Home</a></li>
-                        <li class="breadcrumb-item active">Tabel Alternatif</li>
+                        <li class="breadcrumb-item active">Metode</li>
                     </ol>
                 </div>
             </div>
@@ -37,45 +37,41 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Tabel Alternatif</h3>
+                            <h3 class="card-title">Tabel Rating Kecocokan</h3>
                         </div>
                         <div class="card-body">
-                            <a href="{{route('alternatif.create')}}" class="btn btn-md btn-primary">Tambah Alternatif</a>
-                            <a href="{{route('metode.proses-data')}}" class="btn btn-md btn-primary">Proses Pengambilan Keputusan</a>
+                            {{-- <a href="{{route('alternatif.create')}}" class="btn btn-md btn-primary">Tambah Alternatif</a> --}}
                         </div>
 
                         <!-- /.card-header -->
-                        <div class="card-body">
+                        <div class="card-body table-responsive" style="height: 400px">
                             <table class="table table-bordered">
                                 <thead>
                                     <tr>
-                                        <th style="width: 10px">#</th>
-                                        <th style="width: 200px">Id Alternatif</th>
+                                        <th style="width: 10px">#</th>`
                                         <th>Nama Alternatif</th>
-                                        <th>Data Laptop</th>
-                                        <th style="width: 100px">Aksi</th>
+                                        @foreach ($kriteria as $item)
+                                            <th style="max-width: 77px">{{$item->nama_kriteria}}</th>
+                                        @endforeach
+                                        {{-- <th style="width: 10px">Aksi</th> --}}
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($data as $item)
+                                    {{-- @foreach ($alternatif as $alter)
                                         <tr>
                                             <td>{{$loop->iteration}}</td>
-                                            <td>{{$item->id_alternatif}}</td>
-                                            <td>{{$item->nama_alternatif}}</td>
-                                            <td>
-                                                <a href="{{route('nilai.index', $item->id_alternatif)}}" class="btn btn-sm btn-success d-flex justify-content-center"><i class="fas fa-plus"></i></a>
-                                            </td>
-                                            <td class="d-flex d-inline-flex"> 
-                                                <a href="{{route('alternatif.edit', $item->id_alternatif)}}" class="btn btn-sm btn-warning m-1" title="Ubah"><i class="fas fa-pen"></i></a>
-                                                <form action="{{route('alternatif.delete', $item->id_alternatif)}}" method="POST">
-                                                    @method('DELETE')
-                                                    @csrf
-                                                    <button type="submit" class="btn btn-sm btn-danger m-1" title="Hapu"><i class="fas fa-trash"></i></button>
-                                                </form>
-                                            </td>
+                                            <td>{{$alter->nama_alternatif}}</td>
+                                            @foreach ($nilai as $item)
+                                                <td class="">{{$item->kondisi}}</td>
+                                            @endforeach
+                                        </tr>
+                                    @endforeach --}}
+                                    @foreach ($hasil_vektor_s_all as $item)
+                                        <tr>
+                                            <td>{$item[]}</td>
                                         </tr>
                                     @endforeach
                                 </tbody>

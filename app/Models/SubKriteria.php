@@ -5,17 +5,25 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Alternatif extends Model
+class SubKriteria extends Model
 {
     use HasFactory;
     protected $guard = [];
     protected $fillable = [
-        'id_alternatif',
-        'nama_alternatif',
-        'vektor_s',
-        'vektor_v'
+        'nama_subkriteria',
+        'nilai_subkriteria',
+        'id_kriteria'
     ];
 
+    /**
+     * Get the kriteria that owns the SubKriteria
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\hasMany
+     */
+    public function kriteria()
+    {
+        return $this->hasMany(Kriteria::class);
+    }
 
     /**
      * Get the nilai that owns the Kriteria

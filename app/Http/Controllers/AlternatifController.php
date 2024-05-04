@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Alternatif;
+use App\Models\Kriteria;
+use App\Models\Nilai;
 use Illuminate\Http\Request;
 
 class AlternatifController extends Controller
@@ -29,7 +31,23 @@ class AlternatifController extends Controller
             'nama_alternatif' => $request->nama_alternatif,
         ];
 
+        // $kriteria = Kriteria::select('id_kriteria')->first();
+
+        $kriteria = Kriteria::orderBy('created_at', 'asc')->select('id_kriteria')->get();
+        $nilai = [];
+
+        foreach ($kriteria as $key => $value) {
+            $nilai[] = [
+                'id_alternatif' => 'ALTERNATIF-' . time(),
+                'id_kriteria' => $value->id_kriteria,
+                'nilai' => $request->input($value->id_kriteria)
+            ];
+        }
         Alternatif::create($data);
+        // dd($data, $nilai);
+        foreach ($nilai as $value) {
+            Nilai::create($value);
+        }
         return to_route('alternatif.index')->with('success', 'Alternatif ' . $request->nama_alternatif . ' berhasil ditambahkan.');
     }
     public function edit($id)
