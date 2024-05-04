@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AlternatifController;
 use App\Http\Controllers\Auth\AuthenticateController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KriteriaController;
 use App\Http\Controllers\NilaiController;
 use App\Http\Controllers\SubKriteriaController;
@@ -19,10 +20,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('content.dashboard');
-})->name('dashboard')->middleware('auth');
-
 Route::controller(AuthenticateController::class)
     // ->middleware('guest')
     ->group(function () {
@@ -30,6 +27,14 @@ Route::controller(AuthenticateController::class)
         Route::get('/register', 'registerView')->name('register');
         Route::post('/register', 'storeRegister')->name('post.register');
         Route::post('/login', 'storeLogin')->name('post.login');
+    });
+
+Route::controller(DashboardController::class)
+    ->middleware('auth')
+    ->prefix('beranda')
+    ->group(function () {
+        Route::get('/', 'index')->name('beranda');
+        Route::get('/tentang-spk', 'about')->name('dashboard.about');
     });
 
 Route::controller(KriteriaController::class)
