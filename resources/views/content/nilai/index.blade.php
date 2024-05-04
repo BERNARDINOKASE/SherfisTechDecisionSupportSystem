@@ -37,6 +37,18 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
+                <div class="col-7">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="callout callout-danger">
+                                <h5>Catatan!</h5>
+                                <p>Setiap kondisi laptop wajib diisi agar hasil perhitungan dan pengambilan keputusan dapat diproses.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-md-3">
                     <div class="card">
                         <div class="card-header">
