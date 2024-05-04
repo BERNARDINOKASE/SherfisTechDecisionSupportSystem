@@ -29,7 +29,7 @@
                             class="nav-icon fas fa-tachometer-alt"
                         ></i>
                         <p>
-                            Dashboard
+                            Beranda
                         </p>
                     </a>
                 </li>
