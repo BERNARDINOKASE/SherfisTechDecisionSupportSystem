@@ -105,8 +105,23 @@
                     </div>      
                 </section>
                 <!-- /.Left col -->
-                <!-- right col (We are only adding the ID to make the widgets sortable)-->
-                <section class="col-lg-8">
+                <section class="col-lg-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <h3>Hasil Keputusan</h3>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            @if ($vektor_v != 0)
+                                <p>Hasil pengambilan keputusan dengan menggunakan metode Weight Product untuk menentukan prioritas pengerjaan laptop pada toko Sherfis Tech adalah
+                                    @foreach ($alternatif as $item)
+                                        {{$item->nama_alternatif}},
+                                    @endforeach
+                                </p>
+                            @endif
+                        </div>
+                    </div>
                 </section>
                 <!-- right col -->
             </div>
