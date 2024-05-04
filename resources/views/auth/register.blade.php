@@ -1,4 +1,4 @@
-@extends('main')
+@extends('auth.layouts.main')
 @section('auth')
 <body class="hold-transition register-page">
     <div class="register-box">

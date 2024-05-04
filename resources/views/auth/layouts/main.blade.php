@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Sherfis Tech - Sistem Pendukung Keputusan</title>
+        <title>AdminLTE 3 | Dashboard</title>
 
         <!-- Google Font: Source Sans Pro -->
         <link
@@ -50,5 +50,5 @@
             href="{{asset('assets/')}}/plugins/summernote/summernote-bs4.min.css"
         />
     </head>
-    @yield('main')
+    @yield('auth')
 </html>
