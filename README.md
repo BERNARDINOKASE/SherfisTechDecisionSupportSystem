@@ -45,10 +45,17 @@ Sebelum memulai, pastikan sistem Anda memenuhi persyaratan berikut:
     Setelah mengonfigurasi file `.env`, jalankan migrasi database untuk membuat tabel-tabel yang diperlukan:
 
     ```bash
-    php artisan migrate --seed
+    php artisan migrate
     ```
 
-5. **Generate Kunci Aplikasi**
+    jalankan migrasi database untuk membuat tabel-tabel dan memasukan data awal untuk tabel kriteria laptop ke dalam database
+   
+   ```bash
+    php artisan migrate --seed
+    ```
+   perintah ini akan mengisi secara otomatis tabel kriteria laptop
+
+6. **Generate Kunci Aplikasi**
 
     Laravel membutuhkan kunci aplikasi unik. Jalankan perintah berikut untuk menghasilkan kunci aplikasi:
 
@@ -56,7 +63,7 @@ Sebelum memulai, pastikan sistem Anda memenuhi persyaratan berikut:
     php artisan key:generate
     ```
 
-6. **Jalankan Server Lokal**
+7. **Jalankan Server Lokal**
 
     Terakhir, jalankan server lokal untuk melihat proyek Anda di browser:
 
