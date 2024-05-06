@@ -71,10 +71,9 @@
                                     <label for="kondisi">Nilai</label>
                                     <select class="form-control" id="kondisi" name="kondisi">
                                             <option value="">-- Nilai --</option>
-                                            <option value="1">Normal</option>
-                                            <option value="3">Perbaikan Kecil</option>
-                                            <option value="5">Perbaikan Besar</option>
-                                            <option value="10">Ganti Komponen</option>
+                                            <option value="10">Normal</option>
+                                            <option value="50">Perbaikan Kecil</option>
+                                            <option value="100">Perbaikan Besar</option>
                                     </select>
                                     @if ($errors->has('id_subkriteria'))
                                         <span class="text-danger">{{$errors->first('id_subkriteria')}}</span>

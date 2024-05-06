@@ -107,21 +107,16 @@
                                             @if ($item->kondisi == null)
                                                 <td></td>
                                             @endif
-                                            @if ($item->kondisi == 1)
+                                            @if ($item->kondisi == 10)
                                                 {{-- <td>{{$item->nilai}}</td> --}}
                                                 <td>Normal</td>
                                             @endif
-                                            @if ($item->kondisi == 3)
+                                            @if ($item->kondisi == 50)
                                                 <td>Perbaikan Kecil</td>
                                             @endif
-                                            @if ($item->kondisi == 5)
+                                            @if ($item->kondisi == 100)
                                                 <td>Perbaikan Besar</td>
                                             @endif
-                                            @if ($item->kondisi == 10)
-                                                <td>Ganti Komponen</td>
-                                            @endif
-                                            {{-- <td>{{$item->kriteria}}</td> --}}
-                                            {{-- <td>{{$item->kondisi}}</td> --}}
                                             <td> 
                                                 <a href="{{route('nilai.edit', $item->id)}}" class="btn btn-sm btn-warning" title="Ubah"><i class="fas fa-pen"></i></a>
                                                 {{-- <form action="{{route('nilai.delete', $item->id)}}" method="POST">

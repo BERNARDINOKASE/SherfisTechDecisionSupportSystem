@@ -65,16 +65,6 @@ Route::controller(AlternatifController::class)
         Route::delete('hapus={id}', 'destroy')->name('alternatif.delete');
     });
 
-Route::controller(SubKriteriaController::class)
-    ->middleware('auth')
-    ->prefix('subkriteria')
-    ->group(function () {
-        Route::get('/kriteria={id}', 'index')->name('subkriteria.index');
-        Route::get('/tambah', 'create')->name('subkriteria.create');
-        Route::post('/tambah', 'store')->name('subkriteria.store');
-        Route::delete('hapus={id}', 'destroy')->name('subkriteria.delete');
-    });
-
 Route::controller(NilaiController::class)
     ->middleware('auth')
     ->prefix('nilai')
