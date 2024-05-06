@@ -70,10 +70,6 @@
                                     {{-- <label for="nilai">Subkriteria</label> --}}
                                     <label for="kondisi">Nilai</label>
                                     <select class="form-control" id="kondisi" name="kondisi">
-                                            {{-- <option value="">-- Subkriteria --</option>
-                                            @foreach ($subkriteria as $item)
-                                            <option value="{{$item->id}}">id : {{$item->id}} |{{$item->nama_subkriteria}} - {{$item->nilai_subkriteria}}</option>
-                                            @endforeach --}}
                                             <option value="">-- Nilai --</option>
                                             <option value="1">Normal</option>
                                             <option value="3">Perbaikan Kecil</option>

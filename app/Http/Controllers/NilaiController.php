@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Alternatif;
 use App\Models\Kriteria;
 use App\Models\Nilai;
-use App\Models\SubKriteria;
 use Illuminate\Http\Request;
 
 class NilaiController extends Controller
@@ -26,8 +25,7 @@ class NilaiController extends Controller
 
         // Mengambil nilai pertama yang cocok dengan id_kriteria yang pertama dari model Nilai
         $nilai_id = Nilai::where('id_kriteria', $kriteria->first())->select('id_kriteria')->first();
-        $subkriteria = SubKriteria::where('id_kriteria', $nilai->id_kriteria)->get();
-        return view('content.nilai.create', compact('subkriteria', 'nilai'));
+        return view('content.nilai.create', compact('nilai'));
     }
 
     public function update(Request $request, $id_nilai)
