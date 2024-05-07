@@ -1,4 +1,5 @@
 @extends('auth.layouts.main')
+@section('title','Login')
 @section('auth')
 <body class="hold-transition login-page">
     <div class="login-box">

@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>AdminLTE 3 | Dashboard</title>
+        <title>Sherfis Tech | @yield('title')</title>
 
         <!-- Google Font: Source Sans Pro -->
         <link

@@ -1,4 +1,5 @@
 @extends('auth.layouts.main')
+@section('title',' Register')
 @section('auth')
 <body class="hold-transition register-page">
     <div class="register-box">
